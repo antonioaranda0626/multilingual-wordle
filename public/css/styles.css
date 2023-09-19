@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.game-container {
+    display: flex;
+    background-color: white;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 10px;
+    align-items: center;
+}
+
+header {
+    border-bottom: 1px solid rgb(86, 86, 89)
+}
+
+.title {
+    color:rgb(12, 12, 12);
+    font-size: 2.75rem;
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: center;
+    font-family: inherit;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    min-width: 300px;
+    min-height: 361px;
+}
+
+.cell {
+    border: 2px solid darkgrey;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.key-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 345px;
+    row-gap: 6px;
+    column-gap: 5px;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+
+.key-container button {
+    height: 45px;
+    width: 30px;
+    border-radius: 5px;
+    font-family: inherit;
+    border-color:lightgrey;
+    background-color:lightgrey;
+    font-weight: bold;
+    border-style:none;
+    color:black;
+    font-size: x-small;
+}
+
+.key-container button:hover{ 
+    background-color:dimgrey;
+    color: white;
+}
+
+.key-container button:nth-child(11){
+    margin-left: 18px;
+}
+.key-container button:nth-child(20){
+    width: 47px;
+    height: 45px;
+}
+
+.key-container button:nth-child(28){
+    width: 48px;
+    height: 45px;
+}
+
+.popup-container{
+    position: fixed;
+    background-color:white; 
+    min-width: 300px;
+    font-family: inherit;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 15px;
+}
+
+.popup-header{
+    padding: 20px 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.popup-title{
+    font-size: 1.75rem;
+    font-family: inherit;
+    text-align: center;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0 ,0 , 0.5);
+}
+
+.body{
+    display:flex;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    row-gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.choose-lang-header{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.lang-btn-container{
+    display: grid;
+    max-height: 180px; 
+    justify-content: center;
+    align-content: center;
+    row-gap: 10px;
+}
+.lang-btn-container button{
+    width: 250px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 1.75rem;
+    font-weight:bold;
+    font-family: inherit;
+    text-align: center;
+    border: 0px;
+}
+
+.english-btn{
+    background-color:rgb(179, 25, 66);
+    color: white;
+}
+.english-btn:hover {
+    background-color: gainsboro;
+    color: rgb(179, 25, 66);
+    border: 5px solid rgb(179, 25, 66);
+}
+
+.spanish-btn{
+    background-color:rgb(241, 191, 0);
+    color: rgb(170, 21, 27);
+}
+
+.spanish-btn:hover {
+    background-color: gainsboro;
+    color: rgb(170, 21, 27);
+    border: 5px solid rgb(170, 21, 27);;
+}
+
+.french-btn{
+    background-color:rgb(0,85,164);
+    color: white;
+}
+.french-btn:hover {
+    background-color: gainsboro;
+    color: rgb(179, 25, 66);
+    border: 5px solid rgb(179, 25, 66);
+}
+
+.make-wordle-header{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.input-container{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input{
+    font-size:1.5rem;
+    font-family:inherit;
+    text-align: center;
+    width:200px;
+    align-self: center;
+}
+
+.length-reminder{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.enter-input-btn{
+    width: 200px;
+    height: 50px;
+    align-self: center;
+    border-radius: 7px;
+    border: 0px solid;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color:rgb(90, 211, 90);
+    color:darkgreen;
+}
+
+.enter-input-btn:hover {
+    background-color: darkgreen;
+    color:rgb(90, 211, 90);
+}

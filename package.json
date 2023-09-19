@@ -1,0 +1,24 @@
+{
+  "name": "international-wordle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "an-array-of-french-words": "^2.0.0",
+    "an-array-of-spanish-words": "^2.0.0",
+    "axios": "^0.27.2",
+    "browserify": "^17.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "os": "^0.1.2",
+    "path": "^0.12.7"
+  }
+}
