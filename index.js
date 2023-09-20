@@ -40,7 +40,7 @@ app.get('/spanish-word', (req, res) => {
 
   const options = {
     method: 'GET',
-    url: 'https://random-words-spanish-and-french.p.rapidapi.com/spanish/one-word/5',
+    url: 'https://random-word-api-spanish-french.onrender.com/spanish/one-word/5',
     headers: {
       'X-RapidAPI-Key': process.env.RAPID_API_KEY,
       'X-RapidAPI-Host': 'random-words-spanish-and-french.p.rapidapi.com'
@@ -61,7 +61,7 @@ app.get('/french-word', (req, res) => {
   const axios = require("axios");
   const options = {
     method: 'GET',
-    url: 'https://random-words-spanish-and-french.p.rapidapi.com/french/one-word/5',
+    url: 'https://random-word-api-spanish-french.onrender.com/french/one-word/5',
     headers: {
       'X-RapidAPI-Key': process.env.RAPID_API_KEY,
       'X-RapidAPI-Host': 'random-words-spanish-and-french.p.rapidapi.com'
