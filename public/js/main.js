@@ -210,6 +210,38 @@ document.addEventListener("DOMContentLoaded", () => {
             checkLanguage = "check-french"
         }
         else{
+            let letterId = (guessCount * 5)+ 1;
+            currentGuessArr.forEach((letter, index) => {
+                setTimeout(()=> {
+                    let cellColor = getCellColor(letter, index);
+                    let letterEl = document.getElementById(String(letterId));
+                    letterEl.classList.add("animate__flipInX");
+                    letterEl.style = `background-color: ${cellColor}; border-color: ${cellColor};
+                            color: white;`;
+                    letterId++;
+                }, 250 * index);
+            });
+            setTimeout(()=> {
+                currentGuessArr.forEach((letter, index) => {
+                        let cellColor = getKeyColor(letter, index);
+                        let keyEl = document.getElementById(letter);
+                        keyEl.style = `background-color: ${cellColor}; border-color: ${cellColor};
+                                color: white;`;
+                });
+            }, 1300);
+
+            setTimeout(() => {
+                if(currentGuess != correctWord){
+                        handleIncorrectGuess(currentGuessArr);
+                }
+                else{
+                        window.alert("Congratulations! You guessed the word!");
+                        gameDone = true;
+                }
+            }, 1350);
+
+            guessCount++;
+            console.log('SUBMIT REQUEST');
             return
         }
 
