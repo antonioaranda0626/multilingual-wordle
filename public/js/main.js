@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     enterBtn.addEventListener("click",() => {
         correctWord = inputEl.value.toUpperCase();
+        let popupEl = document.querySelector(".popup-container");
+        let overlayEl = document.querySelector(".overlay");
+        if(popupEl){
+            popupEl.style = 'display:none;';
+            overlayEl.style = "display:none; pointer-events:none;"
+        }
+        languageChosen = "custom";
+        constructGrid();
+        constructKeyboard(languageChosen);
         /* 
         if(correctWord.length != 5){
             window.alert("Word must be 5 letters long!");
@@ -181,17 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentGuess = currentGuessArr.join('');
         let checkLanguage;
 
-        /* Determines what language and API to retrieve word from */
-        if(languageChosen == "english-word"){
-            checkLanguage = "check-english"
-        }
-        else if(languageChosen == "spanish-word"){
-            checkLanguage = "check-spanish"
-        }
-        else{
-            checkLanguage = "check-french"
-        }
-
         /* If the guess is correct, gameDone is true. It allows us to correct issues with
            accents in spanish and french, since this wordle application does not include
            language-specifc alphabets. If the normalized word is correct, we will not 
@@ -199,6 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
         */
         if(currentGuess == correctWord){
             gameDone = true;    
+        }
+
+        /* Determines what language and API to retrieve word from */
+        if(languageChosen == "english-word"){
+            checkLanguage = "check-english"
+        }
+        else if(languageChosen == "spanish-word"){
+            checkLanguage = "check-spanish"
+        }
+        else if(languageChosen == "french-word"){
+            checkLanguage = "check-french"
+        }
+        else{
+            return
         }
 
         /* Dictionary Check Using Word Dictionary API or French/Spanish array dictionaries */
