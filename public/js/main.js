@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Fetches wordle from a random word API, dependent on language */
 
     function fetchWordle(languageChosen){
-        fetch(`https://international-wordle.onrender.com/${languageChosen}`)
+        fetch(`https://multilingual-wordle.onrender.com/${languageChosen}`)
             .then(response => response.json())
             .then(json => {
                 /* Word is normalized before being set to correctWord to remove
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* Dictionary Check Using Word Dictionary API or French/Spanish array dictionaries */
     
-        fetch(`https://international-wordle.onrender.com/${checkLanguage}/?word=${currentGuess.toLowerCase()}`)
+        fetch(`https://multilingual-wordle.onrender.com/${checkLanguage}/?word=${currentGuess.toLowerCase()}`)
             .then(response => response.json())
             .then(json => {
                 if(json == 'Entry word not found' && !gameDone){
