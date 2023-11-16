@@ -8,7 +8,6 @@ var frenchWords = require('an-array-of-french-words')
 const fs = require("fs");
 const path = require('path');
 
-
 require('dotenv').config()
 
 app.use(express.static('public'))
@@ -16,7 +15,6 @@ app.use(express.static('public'))
 app.use(cors())
 
 app.get('/english-word', (req, res) => {
-
 
   const options = {
     method: 'GET',
@@ -101,6 +99,7 @@ app.get('/check-english', (req, res) => {
 })
 
 app.get('/check-french', (req, res) => {
+
   const guess = req.query.word
   if (frenchWords.indexOf(guess) == -1) {
     res.json('Entry word not found')
@@ -111,6 +110,7 @@ app.get('/check-french', (req, res) => {
 })
 
 app.get('/check-spanish', (req, res) => {
+
   const guess = req.query.word
   if (spanishWords.indexOf(guess) == -1) {
     res.json('Entry word not found')
@@ -122,6 +122,7 @@ app.get('/check-spanish', (req, res) => {
 
 
 app.get('/make-custom', (req, res) => {
+  
   let tmpDir = fs.mkdtemp("public/custom-wordle/custom-", (error, folder) => {
     if (error) {
       console.log(error)

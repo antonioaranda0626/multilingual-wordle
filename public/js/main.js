@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let url;
 
     /* Create custom link to custom wordle on click of enter button */
-    /* Need this feature reimplement because of new hosting server. 
+    /* Feature will be reimplemented because of new hosting server. 
        Will use a database to create a permanent custom link  */
 
     enterBtn.addEventListener("click",() => {
@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         languageChosen = "custom";
         constructGrid();
         constructKeyboard(languageChosen);
+
+        /* Old method of creating a custom link, will use a database in the future*/
+
         /* 
         if(correctWord.length != 5){
             window.alert("Word must be 5 letters long!");
